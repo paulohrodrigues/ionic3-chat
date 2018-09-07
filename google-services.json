@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "999453186000",
+    "firebase_url": "https://tarefa-dc71d.firebaseio.com",
+    "project_id": "tarefa-dc71d",
+    "storage_bucket": "tarefa-dc71d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999453186000:android:f5435b3b15c3e2fa",
+        "android_client_info": {
+          "package_name": "com.ionicframework.chat957043"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999453186000-k2sk22gtc8flvjpv9mur2hb08phoj72q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCECmC6KF1a0kFZ4rbdN4K8QbaDf-feGk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

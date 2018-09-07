@@ -3,14 +3,16 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { initializeApp,firestore, auth } from 'firebase';
+import { NotificationProvider } from '../providers/notification/notification';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers:[NotificationProvider]
 })
 export class MyApp {
   rootPage:any = 'AuthPage';
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public notification: NotificationProvider) {
 
     const config = {
       apiKey: "AIzaSyDEc-5ag5GnaNozK_yehbaZfekqEL06lpI",
@@ -42,7 +44,7 @@ export class MyApp {
     });
 
     platform.ready().then(() => {
-      
+      this.notification.notifiction();
       auth().onAuthStateChanged((user:firebase.User)=>{
         if(this.rootPage=="AuthPage"){
           if(user!=null){

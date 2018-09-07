@@ -24,6 +24,9 @@
     },
     "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "com.ionicframework.chat957043"
+    },
+    "cordova-plugin-fcm-with-dependecy-updated": {
+      "PACKAGE_NAME": "com.ionicframework.chat957043"
     }
   },
   "dependent_plugins": {}

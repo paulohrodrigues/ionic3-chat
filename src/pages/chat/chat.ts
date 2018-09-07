@@ -3,11 +3,13 @@ import { IonicPage, NavParams } from 'ionic-angular';
 import { Events, Content } from 'ionic-angular';
 import { ChatService, ChatMessage, UserInfo } from "../../providers/chat-service";
 import { firestore } from 'firebase';
+import { NotificationProvider } from '../../providers/notification/notification';
 
 @IonicPage()
 @Component({
   selector: 'page-chat',
   templateUrl: 'chat.html',
+  providers: [NotificationProvider]
 })
 export class Chat {
 
@@ -21,11 +23,13 @@ export class Chat {
 
   constructor(navParams: NavParams,
               private chatService: ChatService,
-              private events: Events,) {
+              private events: Events,
+              public notification: NotificationProvider) {
     // Get the navParams toUserId parameter
     this.toUser = {
       id: navParams.get('toUserId'),
-      name: navParams.get('toUserName')
+      name: navParams.get('toUserName'),
+      token: navParams.get('toUserToken')
     };
     // Get mock user information
     this.chatService.getUserInfo()
@@ -113,6 +117,7 @@ export class Chat {
       //   this.focus();
       // }
     });
+    this.notification.sendNotification(this.user.name+" envio uma mensagem", "", this.toUser.token);
     this.editorMsg = '';
   }
 

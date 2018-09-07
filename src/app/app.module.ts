@@ -8,6 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { EmojiProvider } from '../providers/emoji';
 import { HttpClientModule } from "@angular/common/http";
+import { Http, HttpModule } from '@angular/http';
+import { NotificationProvider } from '../providers/notification/notification';
+import { FCM } from '@ionic-native/fcm';
 
 
 @NgModule({
@@ -17,6 +20,7 @@ import { HttpClientModule } from "@angular/common/http";
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages:true,
       tabsLayout:'icon-left',
@@ -31,7 +35,9 @@ import { HttpClientModule } from "@angular/common/http";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    EmojiProvider
+    EmojiProvider,
+    NotificationProvider, 
+    FCM
   ]
 })
 export class AppModule {}

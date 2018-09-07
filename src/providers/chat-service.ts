@@ -19,6 +19,7 @@ export class UserInfo {
   id: string;
   name?: string;
   avatar?: string;
+  token?: string;
 }
 
 @Injectable()
