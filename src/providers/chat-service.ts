@@ -58,8 +58,8 @@ export class ChatService {
 
   getUserInfo(): Promise<UserInfo> {
     const userInfo: UserInfo = {
-      id: '140000198202211138',
-      name: 'Luff',
+      id: localStorage.getItem("id"),
+      name: localStorage.getItem("name"),
       avatar: './assets/user.jpg'
     };
     return new Promise(resolve => resolve(userInfo));

@@ -1,20 +1,23 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Home</ion-title>
+    <ion-buttons end (click)="exit()">
+      <button ion-button icon-only>
+          <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
-
 <ion-content>
-
   <ion-list>
-
-    <ion-item navPush="Chat"
-              [navParams]="toUser">
-      <ion-avatar item-left>
-        <img src="./assets/to-user.jpg">
-      </ion-avatar>
-      <h2>Hancock</h2>
-      <p>If at first you don’t succeed, call it version 1.0</p>
+    <ion-item *ngFor="let item of listToUser" navPush="Chat" [navParams]="item">
+      <!-- <p> -->
+        <ion-avatar item-left>
+          <img src="./assets/to-user.jpg">
+        </ion-avatar>
+        <h2>{{item.toUserName}}</h2>
+        <p>{{item.email}}</p>
+      <!-- </p> -->
     </ion-item>
   </ion-list>
 </ion-content>
